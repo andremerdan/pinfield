@@ -1,0 +1,9 @@
+{
+    "*.{json}": [
+        "prettier --write",
+    ],
+    "*.{js,ts,tsx}": [
+        "prettier --write",
+        "stylelint",
+    ]
+}
