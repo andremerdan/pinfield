@@ -4,6 +4,5 @@
     ],
     "*.{js,ts,tsx}": [
         "prettier --write",
-        "stylelint",
     ]
 }
