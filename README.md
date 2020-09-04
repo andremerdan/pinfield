@@ -20,14 +20,24 @@ import React from "react";
 import { NumberLock, PatternLock } from "pinfield";
 
 const Example: React.FC = () => {
-	return (
-		<>
-			<NumberLock />
-			<PatternLock gridSize={3} fields={[1, 2, 3, 4, 5, 6, 7, 8, 9]} />
-		</>
-	);
+  return (
+    <>
+      <NumberLock />
+      <PatternLock gridSize={3} fields={[1, 2, 3, 4, 5, 6, 7, 8, 9]} />
+    </>
+  );
 };
 ```
+
+## Props
+
+### NumberLock
+
+<!-- TODO: pass props automatic -->
+
+### PatternLock
+
+<!-- TODO: pass props automatic -->
 
 ## License
 
