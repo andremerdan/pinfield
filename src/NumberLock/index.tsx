@@ -1,9 +1,9 @@
 import React from "react";
-import { Button as ButtonReakit, ButtonHTMLProps } from "reakit/Button";
+import { Button as ButtonReakit } from "reakit/Button";
 
 export interface Props {
 	handleResult?: (result: number[]) => void;
-	Component?: React.ComponentType<ButtonHTMLProps | any>;
+	Component?: React.ComponentType<any>;
 }
 
 export const NumberLock: React.FC<Props> = ({ handleResult, Component }) => {
