@@ -1,7 +1,7 @@
 {
   "name": "pinfield",
   "version": "1.0.0",
-  "description": "Made with create-react-library",
+  "description": "A react-library to display and handle lock screens",
   "author": "tendo14",
   "license": "MIT",
   "repository": "tendo14/pinfield",
@@ -10,6 +10,10 @@
   "source": "src/index.tsx",
   "engines": {
     "node": ">=10"
+  },
+  "homepage": "https://github.com/tendo14/pinfield",
+  "bugs": {
+    "url": "https://github.com/tendo14/pinfield/issues"
   },
   "scripts": {
     "build": "microbundle-crl --no-compress --format modern,cjs",
