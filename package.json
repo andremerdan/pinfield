@@ -47,7 +47,6 @@
 		"@types/react-dom": "^16.9.7",
 		"babel-loader": "^8.1.0",
 		"cross-env": "^7.0.2",
-		"gh-pages": "^2.2.0",
 		"husky": "^4.2.5",
 		"lint-staged": "^10.3.0",
 		"microbundle-crl": "^0.13.10",
@@ -70,6 +69,7 @@
 	"husky": {
 		"hooks": {
 			"pre-commit": "lint-staged",
+			"pre-push": "yarn test:unit",
 			"post-checkout": "yarn"
 		}
 	}
