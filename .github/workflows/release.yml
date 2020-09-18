@@ -1,23 +1,29 @@
-# Name for the github action
-name: Push to Master
+# NPM Publish is the name for this action
+name: NPM Publish
 
-# Trigger this action when we push to master or merge a pull-request to master
+# This action will trigger on every release get created
 on:
-  push:
-    branches:
-      - master
+  release:
+    types: [created]
 
-# runs the jobs
+# Job will run on a ubuntu instance
 jobs:
   build:
-    # runs on ubuntu
     runs-on: ubuntu-latest
     steps:
-      # checkout to github
+      # Checkout the code
       - uses: actions/checkout@v2
-      # semantic release action from third party
-      - uses: codfish/semantic-release-action@master
-    # Add the environment variable for NPM and github. Github is needed because semantic-release will create a new release and release notes automatically
-    env:
-      GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-      NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+      # Setup node with version 12.x and NPM registry url
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "12.x"
+          registry-url: "https://registry.npmjs.org"
+      # Run yarn install to install project packages
+      - run: yarn install
+      # yarn build to build the project
+      - run: yarn build
+      # publish the files to NPM
+      - run: npm publish --access public
+        # for publishing, npm need authorization. We add the NPM token to the environment which will take care of authorization to publish to the package
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
