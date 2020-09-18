@@ -17,4 +17,8 @@ Basic.args = {
   fields: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   gridSize: 3,
   Component: Checkbox,
+  lineStyles: {
+    borderColor: "green",
+    borderWidth: 3,
+  },
 };

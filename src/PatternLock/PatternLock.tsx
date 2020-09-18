@@ -2,6 +2,14 @@ import React from "react";
 import { useCheckboxState, Checkbox as CheckboxReakit } from "reakit/Checkbox";
 import LineTo from "react-lineto";
 
+interface LineStyles {
+  borderColor?: string;
+  borderStyle?: string;
+  borderWidth?: number;
+  className?: string;
+  zIndex?: number;
+}
+
 export interface Props {
   /** Set initial pattern field. */
   initialState?: number[];
@@ -13,6 +21,8 @@ export interface Props {
   handleResult?: (result: number[]) => void;
   /** Styles the component */
   Component?: React.ComponentType<any>;
+  /** Styles the line */
+  lineStyles?: LineStyles;
 }
 
 export const PatternLock: React.FC<Props> = ({
@@ -21,6 +31,7 @@ export const PatternLock: React.FC<Props> = ({
   gridSize = 3,
   handleResult,
   Component,
+  lineStyles,
 }) => {
   const Checkbox = Component || CheckboxReakit;
 
@@ -41,6 +52,7 @@ export const PatternLock: React.FC<Props> = ({
             from={resultArray[index].toString()}
             to={resultArray[index + 1].toString()}
             key={index}
+            {...lineStyles}
           />
         )
     );
