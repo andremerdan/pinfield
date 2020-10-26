@@ -58,7 +58,7 @@ export const PatternLock: React.FC<Props> = ({
     );
 
   return (
-    <>
+    <React.Fragment>
       {fields.map((value) => (
         <React.Fragment key={value}>
           <Checkbox
@@ -85,6 +85,6 @@ export const PatternLock: React.FC<Props> = ({
       ))}
 
       {Array.isArray(checkbox.state) && renderLines(checkbox.state)}
-    </>
+    </React.Fragment>
   );
 };

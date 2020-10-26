@@ -21,7 +21,7 @@ export const NumberLock: React.FC<Props> = ({ handleResult, Component }) => {
   };
 
   return (
-    <>
+    <React.Fragment>
       {numbers.map((value) => (
         <React.Fragment key={value}>
           <Button onClick={handleOnClick} value={value}>
@@ -30,6 +30,6 @@ export const NumberLock: React.FC<Props> = ({ handleResult, Component }) => {
           {value % 3 === 0 && <div />}
         </React.Fragment>
       ))}
-    </>
+    </React.Fragment>
   );
 };
