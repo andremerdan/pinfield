@@ -1,4 +1,4 @@
 import { NumberLock } from "./components/NumberLock";
-// import { PatternLock } from "./components/PatternLock";
+import { PatternLock } from "./components/PatternLock";
 
-export { NumberLock };
+export { NumberLock, PatternLock };
