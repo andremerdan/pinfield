@@ -8,20 +8,17 @@ export interface Props {
   Component?: React.ComponentType<any>;
 }
 
-export const NumberLock: React.FC<Props> = ({
-  // handleResult
-  Component,
-}) => {
+export const NumberLock: React.FC<Props> = ({ handleResult, Component }) => {
   const Button = Component || ButtonReakit;
-  // const [state, setState] = React.useState([] as number[]);
+  const [state, setState] = React.useState([] as number[]);
   const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
-  // React.useEffect(() => {
-  //   handleResult && handleResult(state);
-  // }, [handleResult, state]);
+  React.useEffect(() => {
+    handleResult && handleResult(state);
+  }, [handleResult, state]);
 
   const handleOnClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     console.log(e);
-    // setState([...state, parseInt(e.currentTarget.value)]);
+    setState([...state, parseInt(e.currentTarget.value)]);
   };
 
   return (
